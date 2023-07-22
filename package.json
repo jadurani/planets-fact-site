@@ -1,6 +1,6 @@
 {
   "name": "planet-facts-site",
-  "author":{
+  "author": {
     "name": "Jadurani Davalos",
     "email": "jadurani.davalos@gmail.com",
     "url": "https://www.jadurani.me/"
@@ -16,7 +16,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@types/node": "20.4.3",
@@ -28,5 +29,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
   }
 }
