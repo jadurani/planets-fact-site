@@ -1,8 +1,6 @@
+import { Header } from "@/components/templates/header/Header";
 import React from "react";
-
-// import { Header } from "@/components/templates/header/Header";
-import { Header } from "../../components/templates/header/Header";
-import "./page.css";
+import styles from "./Page.module.css";
 
 type User = {
   name: string;
@@ -20,7 +18,7 @@ export const Page: React.FC = () => {
         onCreateAccount={() => setUser({ name: "Jane Doe" })}
       />
 
-      <section className="storybook-page">
+      <section className={styles.storybookPage}>
         <h2>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{" "}
