@@ -34,7 +34,6 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const mode = primary ? styles.primary : styles.secondary;
-
   return (
     <button
       type="button"

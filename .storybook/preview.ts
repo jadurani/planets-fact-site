@@ -1,5 +1,8 @@
 import type { Preview } from "@storybook/react";
 
+import { withThemeByClassName } from "@storybook/addon-styling";
+import "tailwindcss/tailwind.css";
+
 const BREAKPOINTS_INT = {
   xs: {
     width: 320,
@@ -53,6 +56,18 @@ const preview: Preview = {
     },
     viewport: { viewports: customViewports },
   },
+
+  decorators: [
+    // Adds theme switching support.
+    // NOTE: requires setting "darkMode" to "class" in your tailwind config
+    withThemeByClassName({
+      themes: {
+        light: "light",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
+  ],
 };
 
 export default preview;
