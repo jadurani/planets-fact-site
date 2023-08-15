@@ -1,7 +1,8 @@
-import type { Preview } from "@storybook/react";
-
 import { withThemeByClassName } from "@storybook/addon-styling";
+import type { Preview } from "@storybook/react";
+import * as React from "react";
 import "tailwindcss/tailwind.css";
+import { AntonioFont, SpartanFont } from "../src/lib/fonts";
 
 const BREAKPOINTS_INT = {
   xs: {
@@ -67,6 +68,11 @@ const preview: Preview = {
       },
       defaultTheme: "light",
     }),
+    (Story) => (
+      <div className={`${AntonioFont.variable} ${SpartanFont.variable}`}>
+        <Story />
+      </div>
+    ),
   ],
 };
 

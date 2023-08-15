@@ -19,10 +19,6 @@ module.exports = {
       uranus: "#1ec2a4",
       neptune: "#2d68f0",
     },
-    fontFamily: {
-      antonio: ["var(--font-antonio)", ...fontFamily.sans],
-      spartan: ["var(--font-spartan)", ...fontFamily.sans],
-    },
     fontSize: {
       h1: [
         "80px",
@@ -77,7 +73,12 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        antonio: ["var(--font-antonio)"],
+        spartan: ["var(--font-spartan)"],
+      },
+    },
   },
   plugins: [],
 };

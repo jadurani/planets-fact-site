@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { AntonioFont, SpartanFont } from "./_app.page";
 
 export default function Home() {
   return (
@@ -11,23 +10,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* One way to set the font family */}
-        <h1 className={`text-h1 ${AntonioFont.className}`}>DONEC JUSTO EGET</h1>
+        <h1 className={`text-h1 font-antonio`}>DONEC JUSTO EGET</h1>
 
-        {/* Another way to set the font family */}
-        <h2 className={`text-h2 font-antonio ${AntonioFont.variable}`}>
-          FELIS FACILISIS FERMENTUM
-        </h2>
+        <h2 className={`text-h2 font-antonio`}>FELIS FACILISIS FERMENTUM</h2>
 
-        <h3 className={`text-h3 ${SpartanFont.className}`}>
+        <h3 className={`text-h3 font-spartan`}>
           ALIUAM PORTTITOR MAURIS SIT AMET ORCI
         </h3>
 
-        <h4 className={`text-h4 ${SpartanFont.className}`}>
+        <h4 className={`text-h4 font-spartan`}>
           AENEAN DIGNISSIM PELLENTESQUE FELIS
         </h4>
 
-        <p className={`text-body1 ${SpartanFont.className} font-normal`}>
+        <p className={`text-body1 font-spartan font-normal`}>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
           hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet
           vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin
