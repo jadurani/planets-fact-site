@@ -4,20 +4,23 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
+    // Make sure these colors match what's in globals.css
+    // We didn't use css variables here so that the VSCode
+    // Tailwind Intellisense can still preview the colors
     colors: {
-      white: "var(--color-white)",
-      black: "var(--color-black)",
-      grey1: "var(--color-grey1)",
-      grey2: "var(--color-grey2)",
-      "grey-hover": "var(--color-grey-hover)",
-      mercury: "var(--color-mercury)",
-      venus: "var(--color-venus)",
-      earth: "var(--color-earth)",
-      mars: "var(--color-mars)",
-      jupiter: "var(--color-jupiter)",
-      saturn: "var(--color-saturn)",
-      uranus: "var(--color-uranus)",
-      neptune: "var(--color-neptune)",
+      white: "#FFFFFF",
+      black: "#070724",
+      grey1: "#38384F",
+      grey2: "#838391",
+      "grey-hover": "#D8D8D8",
+      mercury: "#419EBB",
+      venus: "#EDA249",
+      earth: "#6f2ed6",
+      mars: "#D14C32",
+      jupiter: "#D83A34",
+      saturn: "#CD5120",
+      uranus: "#1ec2a4",
+      neptune: "#2d68f0",
     },
     fontSize: {
       h1: [

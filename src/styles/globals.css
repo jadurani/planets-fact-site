@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* Make sure these colors match the colors in tailwind.config.js */
   --color-white: #ffffff;
   --color-black: #070724;
   --color-grey1: #38384f;
