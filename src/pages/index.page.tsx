@@ -1,3 +1,4 @@
+import { PLANETS } from "@/lib/planets.constant";
 import Head from "next/head";
 
 export default function Home() {
@@ -17,6 +18,15 @@ export default function Home() {
         <h3 className={`text-h3 font-spartan text-earth`}>
           ALIUAM PORTTITOR MAURIS SIT AMET ORCI
         </h3>
+        <ol className="flex">
+          {PLANETS.map((planet, idx) => (
+            <li
+              key={idx}
+              className="p-4 uppercase font-spartan font-bold tracking-wider">
+              A {planet}
+            </li>
+          ))}
+        </ol>
 
         <h4 className={`text-h4 font-spartan`}>
           AENEAN DIGNISSIM PELLENTESQUE FELIS

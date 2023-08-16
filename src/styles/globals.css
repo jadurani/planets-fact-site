@@ -23,4 +23,5 @@ html,
 body {
   color: var(--color-white);
   background-color: var(--color-black);
+  font-family: var(--font-spartan);
 }

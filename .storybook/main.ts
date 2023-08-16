@@ -4,7 +4,13 @@ const path = require("path");
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   /** Expose public folder to storybook as static */
-  staticDirs: ["../public"],
+  staticDirs: [
+    "../public",
+    {
+      from: "../src/styles/fonts",
+      to: "src/styles/fonts"
+    }
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
