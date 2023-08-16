@@ -14,7 +14,7 @@ export default function Home() {
 
         <h2 className={`text-h2 font-antonio`}>FELIS FACILISIS FERMENTUM</h2>
 
-        <h3 className={`text-h3 font-spartan`}>
+        <h3 className={`text-h3 font-spartan text-earth`}>
           ALIUAM PORTTITOR MAURIS SIT AMET ORCI
         </h3>
 

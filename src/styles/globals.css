@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #070724;
+  --color-grey1: #38384f;
+  --color-grey2: #838391;
+  --color-grey-hover: #d8d8d8;
+  --color-mercury: #419ebb;
+  --color-venus: #eda249;
+  --color-earth: #6f2ed6;
+  --color-mars: #d14c32;
+  --color-jupiter: #d83a34;
+  --color-saturn: #cd5120;
+  --color-uranus: #1ec2a4;
+  --color-neptune: #2d68f0;
+}
+
+html,
+body {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
