@@ -3,6 +3,7 @@ import type { Preview } from "@storybook/react";
 import * as React from "react";
 import "tailwindcss/tailwind.css";
 import { AntonioFont, SpartanFont } from "../src/lib/fonts";
+import "../src/styles/globals.css";
 
 const BREAKPOINTS_INT = {
   xs: {
@@ -55,10 +56,6 @@ const withDefaultStyles = (Story) => (
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
-    backgrounds: {
-      default: "black",
-      values: [{ name: "black", value: "#070724" }],
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

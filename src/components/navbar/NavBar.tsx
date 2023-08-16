@@ -4,9 +4,7 @@
 export const NavBar = () => {
   return (
     <nav>
-      <div className="text-h2 font-antonio uppercase text-white">
-        The Planets
-      </div>
+      <div className="text-h2 font-antonio uppercase">The Planets</div>
     </nav>
   );
 };
