@@ -46,9 +46,19 @@ const customViewports = Object.fromEntries(
   })
 );
 
+const withDefaultStyles = (Story) => (
+  <div className={`${AntonioFont.variable} ${SpartanFont.variable}`}>
+    <Story />
+  </div>
+);
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    backgrounds: {
+      default: "black",
+      values: [{ name: "black", value: "#070724" }],
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -68,11 +78,7 @@ const preview: Preview = {
       },
       defaultTheme: "light",
     }),
-    (Story) => (
-      <div className={`${AntonioFont.variable} ${SpartanFont.variable}`}>
-        <Story />
-      </div>
-    ),
+    withDefaultStyles,
   ],
 };
 
