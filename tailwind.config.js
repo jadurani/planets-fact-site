@@ -78,8 +78,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        antonio: ["var(--font-antonio)"],
-        spartan: ["var(--font-spartan)"],
+        antonio: ["var(--font-antonio)", ...fontFamily.sans],
+        spartan: ["var(--font-spartan)", ...fontFamily.sans],
       },
     },
   },
