@@ -11,6 +11,12 @@ interface NavLinkProps {
    * Is the current link active?
    */
   isActive?: boolean;
+  /**
+   * Is this nav link the last nav item?
+   * This is for
+   * Typically could be done by `:last` in css
+   */
+  isLastItem?: boolean;
 }
 
 const MOBILE_NAV_LINK_COLORS: Record<Planet, string> = {
@@ -24,13 +30,19 @@ const MOBILE_NAV_LINK_COLORS: Record<Planet, string> = {
   neptune: "#497EFA",
 };
 
-export const NavLink = ({ id, isActive = false }: NavLinkProps) => {
+export const NavLink = ({
+  id,
+  isActive = false,
+  isLastItem = false,
+}: NavLinkProps) => {
   const isActiveClasses = isActive
     ? `border-${id} text-white`
     : "text-white/50 border-transparent";
 
+  const bottomBorder = isLastItem ? "border-transparent" : "border-white/10";
   return (
     <>
+      {/* Desktop */}
       <div
         className={`
           hidden md:block
@@ -41,10 +53,12 @@ export const NavLink = ({ id, isActive = false }: NavLinkProps) => {
         <Link href={id}>{id}</Link>
       </div>
 
+      {/* Mobile */}
       <div
-        className="
-          flex md:hidden w-full justify-between p-4 items-center font-spartan
-          font-semibold tracking-[0.15em] text-h4 uppercase">
+        className={`flex md:hidden justify-between items-center
+        font-spartan font-semibold tracking-[0.15em] text-h4 uppercase
+        border-b-[1px] border-solid
+        mx-6 py-4 ${bottomBorder}`}>
         <span className="flex items-center gap-4">
           <svg
             className={`text-${id}`}
