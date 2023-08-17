@@ -8,7 +8,9 @@ export const PLANETS = [
   'saturn',
   'uranus',
   'neptune',
-]
+] as const
+
+export type Planet = typeof PLANETS[number]
 
 /**
  * Declaring the colors to prevent tailwind from purging them

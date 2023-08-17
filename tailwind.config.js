@@ -21,6 +21,7 @@ module.exports = {
       saturn: "#CD5120",
       uranus: "#1ec2a4",
       neptune: "#2d68f0",
+      transparent: "transparent",
     },
     fontSize: {
       h1: [
