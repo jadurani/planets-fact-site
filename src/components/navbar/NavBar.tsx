@@ -5,7 +5,7 @@ import { PLANETS } from "@/lib/planets.constant";
  */
 export const NavBar = () => {
   return (
-    <nav className="px-6 flex flex-wrap justify-between md:justify-center lg:justify-between items-center">
+    <nav className="px-6 flex flex-wrap justify-between md:justify-center lg:justify-between items-center border-b-[1px] border-solid border-white/20">
       <div className="text-[28px] py-4 font-antonio font-extralight uppercase">
         The Planets
       </div>
