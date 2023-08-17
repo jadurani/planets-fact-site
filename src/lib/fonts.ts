@@ -3,7 +3,7 @@ import localFont from 'next/font/local';
 
 export const AntonioFont = Antonio({
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["100", "200", "300", "400", "500"],
   variable: "--font-antonio",
 });
 

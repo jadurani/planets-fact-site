@@ -5,15 +5,20 @@ import { PLANETS } from "@/lib/planets.constant";
  */
 export const NavBar = () => {
   return (
-    <nav className="flex justify-between items-center">
-      <div className="text-h2 font-antonio uppercase border-b-">
+    <nav className="px-6 flex flex-wrap justify-between md:justify-center lg:justify-between items-center">
+      <div className="text-[28px] py-4 font-antonio font-extralight uppercase">
         The Planets
       </div>
-      <ol className="flex">
+
+      <button className="md:hidden">
+        <img src="/icons/icon-hamburger.svg" alt="Menu" />
+      </button>
+
+      <ol className="hidden md:flex justify-stretch">
         {PLANETS.map((planet, idx) => (
           <li
             key={idx}
-            className={`p-4 uppercase font-spartan font-bold tracking-wider border-${planet} border-t-4 border-solid`}>
+            className={`p-4 uppercase w-full text-center font-spartan font-bold tracking-wider border-${planet} border-t-4 border-solid text-h4`}>
             {planet}
           </li>
         ))}

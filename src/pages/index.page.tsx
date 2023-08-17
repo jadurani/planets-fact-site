@@ -1,3 +1,4 @@
+import { NavBar } from "@/components/navbar/NavBar";
 import { PLANETS } from "@/lib/planets.constant";
 import Head from "next/head";
 
@@ -11,6 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <NavBar />
         <h1 className={`text-h1 font-antonio`}>DONEC JUSTO EGET</h1>
 
         <h2 className={`text-h2 font-antonio`}>FELIS FACILISIS FERMENTUM</h2>
