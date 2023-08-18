@@ -1,9 +1,13 @@
-import { PLANETS } from "@/lib/planets.constant";
+import { PLANETS, Planet } from "@/lib/planets.constant";
 import Link from "next/link";
 import { useState } from "react";
 import { NavLink } from "../navlink/NavLink";
 
-export const NavBar = () => {
+interface NavBarProps {
+  activeRoute: Planet;
+}
+
+export const NavBar = ({ activeRoute }: NavBarProps) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -17,7 +21,6 @@ export const NavBar = () => {
           className="text-[28px] py-4 font-antonio font-extralight uppercase">
           The Planets
         </Link>
-
         <nav>
           <button
             onClick={() => setOpenMenu(!openMenu)}
@@ -33,7 +36,9 @@ export const NavBar = () => {
           <ul className="hidden md:flex justify-stretch">
             {PLANETS.map((planet, idx) => (
               <li key={idx}>
-                <NavLink id={planet}></NavLink>
+                <NavLink
+                  id={planet}
+                  isActive={planet === activeRoute}></NavLink>
               </li>
             ))}
           </ul>
