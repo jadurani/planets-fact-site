@@ -20,7 +20,11 @@ export const NavBar = () => {
 
         <nav>
           <button className="md:hidden">
-            <img src="/icons/icon-hamburger.svg" alt="Menu" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
+              <g fill="#FFF" fill-rule="evenodd">
+                <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
+              </g>
+            </svg>
           </button>
           <ul className="hidden md:flex justify-stretch">
             {PLANETS.map((planet, idx) => (
