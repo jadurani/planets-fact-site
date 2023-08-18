@@ -1,10 +1,15 @@
 import { Description } from "@/components/description/Description";
 import { Fact } from "@/components/fact/Fact";
+import { DescriptionType } from "@/components/tablink/TabLink";
+import { TabNav } from "@/components/tabnav/TabNav";
+import { Planet } from "@/lib/planets.constant";
 import { useRouter } from "next/router";
 
 export default function PlanetPage() {
   const router = useRouter();
-  const planet = router.query.planet;
+  type RouteType = { planet: Planet; desc: DescriptionType };
+  const { planet, desc }: RouteType = router.query as RouteType;
+
   return (
     <div className="container mx-auto">
       {/* profile image */}
@@ -19,6 +24,10 @@ export default function PlanetPage() {
           source="https://en.wikipedia.org/wiki/Mercury_(planet)"
         />
       </div>
+
+      {/* subnav */}
+      <TabNav planet={planet} desc={desc} />
+
       {/* facts */}
       <div className="flex flex-col md:grid grid-cols-4 gap-4">
         <Fact property="rotation" value="58.6 Days" />
