@@ -43,18 +43,20 @@ export const NavLink = ({
   return (
     <>
       {/* Desktop */}
-      <div
+      <Link
+        href={id}
         className={`
           hidden md:block
           px-4 pt-5 pb-7 lg:pb-6 uppercase w-full text-center font-spartan
           font-semibold tracking-[0.15em] text-h4 hover:text-white
           transition-colors duration-500 border-t-4 border-solid
           ${isActiveClasses}`}>
-        <Link href={id}>{id}</Link>
-      </div>
+        {id}
+      </Link>
 
       {/* Mobile */}
-      <div
+      <Link
+        href={id}
         className={`flex md:hidden justify-between items-center
         font-spartan font-semibold tracking-[0.15em] text-h4 uppercase
         border-b-[1px] border-solid
@@ -69,12 +71,12 @@ export const NavLink = ({
             xmlns="http://www.w3.org/2000/svg">
             <circle cx="10" cy="10" r="10" fill={MOBILE_NAV_LINK_COLORS[id]} />
           </svg>
-          <Link href={id}>{id}</Link>
+          {id}
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
           <path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
         </svg>
-      </div>
+      </Link>
     </>
   );
 };
