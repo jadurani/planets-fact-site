@@ -1,11 +1,11 @@
 import { PLANETS } from "@/lib/planets.constant";
 import Link from "next/link";
+import { useState } from "react";
 import { NavLink } from "../navlink/NavLink";
 
-/**
- * Primary UI component for user interaction
- */
 export const NavBar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <>
       <header
@@ -19,9 +19,13 @@ export const NavBar = () => {
         </Link>
 
         <nav>
-          <button className="md:hidden">
+          <button
+            onClick={() => setOpenMenu(!openMenu)}
+            className={`${
+              openMenu ? "text-white/25" : "text-white"
+            } md:hidden `}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
-              <g fill="#FFF" fill-rule="evenodd">
+              <g fill="currentColor" fill-rule="evenodd">
                 <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
               </g>
             </svg>
@@ -36,20 +40,23 @@ export const NavBar = () => {
         </nav>
       </header>
 
-      <nav className="md:hidden">
-        <ul>
-          {PLANETS.map((planet, idx, arr) => {
-            const isLastItem = idx === arr.length - 1;
-            return (
-              <li
-                key={idx}
-                className="hover:bg-grey-hover/20 transition-colors duration-500">
-                <NavLink id={planet} isLastItem={isLastItem}></NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      {/* Mobile Menu */}
+      {openMenu && (
+        <nav className="md:hidden">
+          <ul>
+            {PLANETS.map((planet, idx, arr) => {
+              const isLastItem = idx === arr.length - 1;
+              return (
+                <li
+                  key={idx}
+                  className="hover:bg-grey-hover/20 transition-colors duration-500">
+                  <NavLink id={planet} isLastItem={isLastItem}></NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
     </>
   );
 };
