@@ -16,32 +16,44 @@ export default function PlanetPage() {
   }
 
   return (
-    <div className="container mx-auto">
-      {/* profile image */}
-      <Profile planet={planet} desc={desc} />
-
-      {/* description */}
-      <div>
-        <h1 className="text-center md:text-start font-antonio uppercase text-h2 md:text-[48px] lg:text-h1">
-          {planet}
-        </h1>
-
-        <Description
-          content="Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth."
-          source="https://en.wikipedia.org/wiki/Mercury_(planet)"
-        />
+    <>
+      <div className="md:hidden">
+        <TabNav planet={planet} desc={desc} />
       </div>
 
-      {/* subnav */}
-      <TabNav planet={planet} desc={desc} />
+      <div className="container flex flex-col m-auto py-8 px-4 justify-center h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3">
+          {/* profile image */}
+          <div className="lg:col-span-2 md:p-20 flex items-center mx-auto justify-center m-8 w-40 h-40 md:w-[500px] md:h-[500px]">
+            <Profile planet={planet} desc={desc} />
+          </div>
 
-      {/* facts */}
-      <div className="flex flex-col md:grid grid-cols-4 gap-4">
-        <Fact property="rotation" value="58.6 Days" />
-        <Fact property="revolution" value="87.97 Days" />
-        <Fact property="radius" value="2,439.7 KM" />
-        <Fact property="temperature" value="430°c" />
+          {/* description */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-8 my-auto items-center">
+            <div>
+              <h1 className="text-center md:text-start font-antonio uppercase text-h2 md:text-[48px] lg:text-h1">
+                {planet}
+              </h1>
+
+              <Description
+                content="Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth."
+                source="https://en.wikipedia.org/wiki/Mercury_(planet)"
+              />
+            </div>
+            <div className="hidden md:block">
+              <TabNav planet={planet} desc={desc} />
+            </div>
+          </div>
+        </div>
+
+        {/* facts */}
+        <div className="flex flex-col md:grid grid-cols-4 gap-4 lg:my-16">
+          <Fact property="rotation" value="58.6 Days" />
+          <Fact property="revolution" value="87.97 Days" />
+          <Fact property="radius" value="2,439.7 KM" />
+          <Fact property="temperature" value="430°c" />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

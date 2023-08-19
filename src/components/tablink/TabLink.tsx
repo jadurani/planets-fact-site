@@ -52,6 +52,7 @@ export const TabLink = ({
     <>
       {/* Mobile */}
       <Link
+        scroll={false}
         href={`/${planet}?desc=${id}`}
         className={`uppercase font-spartan text-[9px] tracking-[.3em] font-medium
         px-1 pt-4 pb-3 inline-block border-b-4 border-solid
@@ -65,7 +66,7 @@ export const TabLink = ({
       </Link>
 
       {/* Desktop */}
-      <Link href={`/${planet}?desc=${id}`}>
+      <Link scroll={false} href={`/${planet}?desc=${id}`}>
         <button
           className={`w-full uppercase font-spartan text-[9px] tracking-[.3em] font-medium
           ${isMobile ? "hidden" : "flex"} gap-4 p-4 border border-solid

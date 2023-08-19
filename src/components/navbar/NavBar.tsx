@@ -46,7 +46,7 @@ export const NavBar = ({ activeRoute }: NavBarProps) => {
 
       {/* Mobile Menu */}
       {openMenu && (
-        <nav className="bg-black fixed w-full h-full md:hidden">
+        <nav className="bg-black fixed z-10 w-full h-full md:hidden">
           <ul>
             {PLANETS.map((planet, idx, arr) => {
               const isLastItem = idx === arr.length - 1;
