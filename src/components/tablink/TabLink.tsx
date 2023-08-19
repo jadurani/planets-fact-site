@@ -1,7 +1,7 @@
 import { Planet } from "@/lib/planets.constant";
 import Link from "next/link";
 
-export const DESCRIPTIONS = ["overview", "structure", "geology"];
+export const DESCRIPTIONS = ["overview", "structure", "geology"] as const;
 export type DescriptionType = (typeof DESCRIPTIONS)[number];
 
 interface TabLinkProps {
