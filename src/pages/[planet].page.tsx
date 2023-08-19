@@ -1,6 +1,7 @@
 import { Description } from "@/components/description/Description";
 import { Fact } from "@/components/fact/Fact";
-import { DescriptionType } from "@/components/tablink/TabLink";
+import { Profile } from "@/components/profile/Profile";
+import { DESCRIPTIONS, DescriptionType } from "@/components/tablink/TabLink";
 import { TabNav } from "@/components/tabnav/TabNav";
 import { Planet } from "@/lib/planets.constant";
 import { useRouter } from "next/router";
@@ -8,11 +9,17 @@ import { useRouter } from "next/router";
 export default function PlanetPage() {
   const router = useRouter();
   type RouteType = { planet: Planet; desc: DescriptionType };
-  const { planet, desc }: RouteType = router.query as RouteType;
+  let { planet, desc }: RouteType = router.query as RouteType;
+
+  if (!desc || !DESCRIPTIONS.includes(desc)) {
+    desc = "overview";
+  }
 
   return (
     <div className="container mx-auto">
       {/* profile image */}
+      <Profile planet={planet} desc={desc} />
+
       {/* description */}
       <div>
         <h1 className="text-center md:text-start font-antonio uppercase text-h2 md:text-[48px] lg:text-h1">
