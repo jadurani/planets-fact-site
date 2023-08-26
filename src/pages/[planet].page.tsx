@@ -16,11 +16,12 @@ export default function PlanetPage() {
   }
 
   const planetTitle = planet?.toUpperCase();
+  const pageTitle = `Planet Facts: ${planetTitle}`;
 
   return (
     <>
       <Head>
-        <title>{planetTitle} Planet Facts </title>
+        <title>{pageTitle}</title>
         <meta
           name="description"
           content="Designed by FE Mentor; Implemented by Jadurani Davalos"
