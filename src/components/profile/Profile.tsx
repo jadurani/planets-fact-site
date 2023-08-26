@@ -1,5 +1,4 @@
-import { Planet } from "@/lib/planets.constant";
-import { DescriptionType } from "../tablink/TabLink";
+import { DescriptionType, Planet } from "@/lib/planets.constant";
 
 interface ProfileProps {
   planet: Planet;

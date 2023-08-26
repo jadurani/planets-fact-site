@@ -1,9 +1,8 @@
 import { Description } from "@/components/description/Description";
 import { Fact } from "@/components/fact/Fact";
 import { Profile } from "@/components/profile/Profile";
-import { DESCRIPTIONS, DescriptionType } from "@/components/tablink/TabLink";
 import { TabNav } from "@/components/tabnav/TabNav";
-import { Planet } from "@/lib/planets.constant";
+import { DESCRIPTIONS, DescriptionType, Planet } from "@/lib/planets.constant";
 import Head from "next/head";
 import { useRouter } from "next/router";
 

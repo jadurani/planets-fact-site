@@ -1,5 +1,5 @@
-import { Planet } from "@/lib/planets.constant";
-import { DESCRIPTIONS, DescriptionType, TabLink } from "../tablink/TabLink";
+import { DESCRIPTIONS, DescriptionType, Planet } from "@/lib/planets.constant";
+import { TabLink } from "../tablink/TabLink";
 
 interface TabNavProps {
   planet: Planet;

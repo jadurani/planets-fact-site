@@ -25,3 +25,36 @@ export const PLANET_COLORS = {
   uranus: ['bg-uranus', 'border-uranus'],
   neptune: ['bg-neptune', 'border-neptune']
 }
+
+export interface PlanetData {
+  name: Planet;
+  overview: PlanetFact;
+  structure: PlanetFact;
+  geology: PlanetFact;
+  rotation: string;
+  revolution: string;
+  radius: string;
+  temperature: string;
+  images: Images;
+}
+
+export interface PlanetFact {
+  content: string;
+  source: string;
+}
+
+export type Images = {
+  planet: string;
+  internal: string;
+  geology: string;
+}
+
+// not sure if still needed -- see Profile.tsx
+export const MapFactToImage = {
+  overview: 'planet',
+  structure: 'internal',
+  geology: 'geology'
+}
+
+export const DESCRIPTIONS = ["overview", "structure", "geology"] as const;
+export type DescriptionType = (typeof DESCRIPTIONS)[number];
