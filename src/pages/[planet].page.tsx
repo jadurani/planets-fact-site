@@ -2,13 +2,39 @@ import { Description } from "@/components/description/Description";
 import { Fact } from "@/components/fact/Fact";
 import { Profile } from "@/components/profile/Profile";
 import { TabNav } from "@/components/tabnav/TabNav";
-import { DESCRIPTIONS, DescriptionType, Planet } from "@/lib/planets.constant";
+import { getPlanetData } from "@/lib/planets";
+import {
+  DESCRIPTIONS,
+  DescriptionType,
+  PLANETS,
+  Planet,
+  PlanetData,
+} from "@/lib/planets.constant";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-export default function PlanetPage() {
+type RouteType = { planet: Planet; desc: DescriptionType };
+
+export async function getStaticPaths() {
+  const paths = PLANETS.map((p) => ({ params: { planet: p } }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: { params: RouteType }) {
+  const planetData = getPlanetData(params.planet);
+  return {
+    props: {
+      planetData,
+    },
+  };
+}
+
+export default function PlanetPage({ planetData }: { planetData: PlanetData }) {
   const router = useRouter();
-  type RouteType = { planet: Planet; desc: DescriptionType };
   let { planet, desc }: RouteType = router.query as RouteType;
 
   if (!desc || !DESCRIPTIONS.includes(desc)) {
@@ -48,8 +74,8 @@ export default function PlanetPage() {
               </h1>
 
               <Description
-                content="Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth."
-                source="https://en.wikipedia.org/wiki/Mercury_(planet)"
+                content={planetData[desc].content}
+                source={planetData[desc].source}
               />
             </div>
             <div className="hidden md:block">
@@ -60,10 +86,10 @@ export default function PlanetPage() {
 
         {/* facts */}
         <div className="flex flex-col md:grid grid-cols-4 gap-4 lg:my-16">
-          <Fact property="rotation" value="58.6 Days" />
-          <Fact property="revolution" value="87.97 Days" />
-          <Fact property="radius" value="2,439.7 KM" />
-          <Fact property="temperature" value="430°c" />
+          <Fact property="rotation" value={planetData.rotation} />
+          <Fact property="revolution" value={planetData.revolution} />
+          <Fact property="radius" value={planetData.radius} />
+          <Fact property="temperature" value={planetData.temperature} />
         </div>
       </div>
     </>
