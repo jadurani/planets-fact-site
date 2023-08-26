@@ -27,7 +27,7 @@ export const NavBar = ({ activeRoute }: NavBarProps) => {
             className={`md:hidden duration-500 transition-colors
             ${openMenu ? "text-white/25" : "text-white"}`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
-              <g fill="currentColor" fill-rule="evenodd">
+              <g fill="currentColor" fillRule="evenodd">
                 <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
               </g>
             </svg>
