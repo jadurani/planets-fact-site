@@ -63,19 +63,19 @@ export const TabLink = ({
       </Link>
 
       {/* Desktop */}
-      <Link scroll={false} href={`/${planet}?desc=${id}`}>
-        <button
-          className={`w-full uppercase font-spartan text-[9px] tracking-[.3em] font-medium
+      <Link
+        scroll={false}
+        href={`/${planet}?desc=${id}`}
+        className={`w-full uppercase font-spartan text-[9px] tracking-[.3em] font-medium
           ${isMobile ? "hidden" : "flex"} gap-4 p-4 border border-solid
-          transition-colors duration-500
+            transition-colors duration-500
           ${
             isActive
               ? `bg-${planet} border-transparent`
               : "border-white/20 hover:bg-white/20 hover:border-transparent"
           }`}>
-          <span className="w-4 text-white/50">0{index + 1}</span>
-          <span className="text-white">{labels.desktop[id]}</span>
-        </button>
+        <span className="w-4 text-white/50">0{index + 1}</span>
+        <span className="text-white">{labels.desktop[id]}</span>
       </Link>
     </>
   );
