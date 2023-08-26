@@ -5,7 +5,7 @@ interface DescriptionProps {
 
 export const Description = ({ content, source }: DescriptionProps) => (
   <div className="font-spartan">
-    <p className="my-4 text-center tracking-wide md:text-left text-[11px] font-thin">
+    <p className="my-4 min-h-[7rem] md:min-h-[6rem] text-center tracking-wide md:text-left text-[11px] font-thin">
       {content}
     </p>
 
