@@ -11,7 +11,7 @@ export const Description = ({ content, source }: DescriptionProps) => (
 
     <div className="my-6 text-white/50 text-[12px] flex justify-center md:justify-start items-center">
       <span>Source&nbsp;:&nbsp;</span>
-      <a href={source} className="flex items-end gap-1">
+      <a href={source} className="flex items-end gap-1" target="_blank">
         <span className="underline tracking-widest font-medium">Wikipedia</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
           <path
